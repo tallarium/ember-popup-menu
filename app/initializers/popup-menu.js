@@ -7,8 +7,9 @@ var keys = Ember.keys;
 
 export var initialize = function (container) {
   var matcher = new RegExp(config.modulePrefix + '/popup-menu/flows/.*');
+  var entries = keys(window.requirejs.entries);
 
-  keys(window.require.entries).filter(function (path) {
+  entries.filter(function (path) {
     return matcher.test(path);
   }).forEach(function (path) {
     var flowName = path.replace(config.modulePrefix + '/popup-menu/flows/', '');
@@ -19,7 +20,7 @@ export var initialize = function (container) {
 
   matcher = new RegExp(config.modulePrefix + '/popup-menu/animators/.*');
 
-  keys(window.require.entries).filter(function (path) {
+  entries.filter(function (path) {
     return matcher.test(path);
   }).forEach(function (path) {
     var animationName = path.replace(config.modulePrefix + '/popup-menu/animators/', '');
