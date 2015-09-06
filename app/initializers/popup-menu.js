@@ -3,7 +3,7 @@ import Flow from "ember-popup-menu/system/flow";
 import config from "../config/environment";
 
 var get = Ember.get;
-var keys = Ember.keys;
+var keys = Object.keys;
 
 export var initialize = function (container) {
   var matcher = new RegExp(config.modulePrefix + '/popup-menu/flows/.*');
